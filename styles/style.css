@@ -1,0 +1,35 @@
+@import url("import-fonts.css");
+
+:root {
+  --header-color: #1a2238;
+  --menu-text-color: #f0f8ff;
+}
+
+body {
+  font-family: Poppins, sans-serif;
+}
+
+.header-container {
+  display: flex;
+  height: 30vh;
+  background-color: var(--header-color);
+  align-items: flex-start;
+  justify-content:flex-end;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+  margin-right: 10px;
+  
+  width: 600px;
+  
+
+}
+
+.navbar .nav-link {
+  color: var(--menu-text-color);
+  font-size: 0.8rem;
+  text-decoration: none;
+}
