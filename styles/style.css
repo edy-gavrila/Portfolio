@@ -2,7 +2,9 @@
 
 :root {
   --header-color: #1a2238;
-  --menu-text-color: #f0f8ff;
+  --menu-text-color: #9daaf2;
+  --accent-color-links: #ff6a3d;
+  --accent-color-backround: #ffedae;
 }
 
 body {
@@ -11,10 +13,10 @@ body {
 
 .header-container {
   display: flex;
-  height: 30vh;
+  height: 40vh;
   background-color: var(--header-color);
   align-items: flex-start;
-  justify-content:flex-end;
+  justify-content: flex-end;
 }
 
 .navbar {
@@ -22,14 +24,69 @@ body {
   justify-content: space-between;
   margin-top: 3rem;
   margin-right: 10px;
-  
-  width: 600px;
-  
 
+  width: 760px;
 }
 
 .navbar .nav-link {
   color: var(--menu-text-color);
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   text-decoration: none;
+  transition: transform 0.1s linear;
+}
+
+.navbar .nav-link:hover {
+  color: var(--accent-color-links);
+  transform: scale(1.1);
+  transition: transform 0.1s linear;
+}
+
+.avatar {
+  position: absolute;
+  height: 450px;
+  width: 300px;
+  top: 150px;
+  left: 100px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6), -1px -1px 5px rgba(0, 0, 0, 0.6);
+  border-radius: 3px;
+}
+
+.introduction {
+  
+  display: flex;
+  padding-top: 100px;
+  padding-left: 350px;
+  flex-direction: column;
+  height: 50vh;
+  align-items: center;
+}
+
+.welcome-title {
+  font-family: Open-Sans;
+  font-weight: bold;
+  font-size: 5.5rem;
+  text-align: center;
+  letter-spacing: 3px;
+  
+}
+
+.welcome-subtitle {
+  font-size: 1.4rem;
+  text-align: end;
+  margin-top: 20px;
+  color: var(--header-color);
+  letter-spacing: 2px;
+  font-style: italic;
+  
+}
+
+.about-me{
+    padding: 200px;
+    background-color: var(--accent-color-backround);
+}
+
+.about-me h2{
+    font-size: 3rem;
+    text-align: center;
+    margin: 100px 0;
 }
