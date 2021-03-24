@@ -136,8 +136,8 @@ html {
 }
 
 .menu .image img {
-    width: 140px;
-    height: 140px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     text-align: center;
 }
@@ -372,6 +372,7 @@ button:hover {
 .left-image img,
 .right-image img {
     border-radius: 5px;
+
 }
 
 .right-image-post h4,
@@ -435,12 +436,11 @@ button:hover {
 }
 
 .service-item .first-service-icon {
-    background-image: url(../images/first-white-icon.png);
+    width: 117px;
+    
+    background-image: url(../images/htmlcss.png);
 }
 
-.service-item:hover .first-service-icon {
-    background-image: url(../images/first-main-icon.png);
-}
 
 .service-item .second-service-icon {
     background-image: url(../images/second-white-icon.png);
@@ -764,8 +764,8 @@ section.contact-me {
     }
 
     .menu .image img {
-        width: 120px;
-        height: 120px;
+        width: 140px;
+        height: 140px;
     }
 
     .menu .author-content {
