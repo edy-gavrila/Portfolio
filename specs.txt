@@ -1,0 +1,29 @@
+This is my personal portofolio website
+I plan doing this using only the most basic tools. 
+For design:
+1. Wire frame using Fireframe.cc
+2. Mockup using Figma
+
+For implementation:
+1. HTML
+2. CSS
+3. JavaScript
+
+User stories:
+
+1. The site should have an intro displaying when first loading the page. I should be a cool shor animation, introducing myself.
+
+2. At the top of the page there should be a hero banner with my phote, a site menu and an inspirational quotation.
+    --Site menu: Bio, Projects
+
+3. There should be a bio section where I should present a few key facts about myself, a short bio. 
+    -There should be a download CV button.
+    -There should be some bio-cards wit some animation.
+
+4. There should be a projects section where I showcase a few of my top projects so far.
+Projects should be presentes in a carousel of iFrames. Each iFrame should link to a separate page with detailed description for the each project. 
+
+5. There should be a contact section, with the logos of the technologies I am competent on, also a contact form.
+There should be email address and telephone number displayed.  There should be also a copyright footer, right at the bottom.
+
+6. There should be a mobile-firendly version as well
