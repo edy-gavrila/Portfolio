@@ -391,7 +391,7 @@ button:hover {
 }
 
 
-/* Services */
+/* Technologies */
 
 .my-services .col-md-6 {
     padding-left: 5px;
@@ -403,6 +403,8 @@ button:hover {
     padding: 50px;
     background-color: rgba(250, 250, 250, 0.1);
     transition: all 0.5s;
+    height: 500px;
+    overflow: hidden;
 }
 
 .service-item h4 {
@@ -426,44 +428,52 @@ button:hover {
 }
 
 .service-item .service-icon {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     display: inline-block;
     margin-bottom: 30px;
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     transition: all 0.5s;
 }
 
 .service-item .first-service-icon {
-    width: 117px;
-    
+    width: 130px;
     background-image: url(../images/htmlcss.png);
 }
 
 
 .service-item .second-service-icon {
-    background-image: url(../images/second-white-icon.png);
+    width: 130px;
+    background-image: url(../images/javascript.png);
 }
 
-.service-item:hover .second-service-icon {
-    background-image: url(../images/second-main-icon.png);
-}
 
 .service-item .third-service-icon {
-    background-image: url(../images/third-white-icon.png);
+    background-image: url(../images/react.png);
 }
 
-.service-item:hover .third-service-icon {
-    background-image: url(../images/third-main-icon.png);
-}
 
 .service-item .fourth-service-icon {
-    background-image: url(../images/fourth-white-icon.png);
+    width: 95px;
+    height: 95px;
+    margin-bottom: 15px;
+    background-image: url(../images/bootstrap.png);
 }
 
-.service-item:hover .fourth-service-icon {
-    background-image: url(../images/fourth-main-icon.png);
+.service-item .fifth-service-icon {
+    margin-bottom: 25px;
+    background-image: url(../images/git.png);
+}
+.service-item .sixth-service-icon {
+    width: 95px;
+    height: 95px;
+    margin-bottom: 15px;
+    background-image: url(../images/github.png);
+}
+
+.service-item .seventh-service-icon {
+    background-image: url(../images/vscode.png);
 }
 
 
