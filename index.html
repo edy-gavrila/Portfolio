@@ -264,7 +264,9 @@ https://templatemo.com/tm-531-reflux
             <h2>My Work</h2>
             <div class="line-dec"></div>
             <span
-              >Below are a few examples of my work. All the source code is available as Github Repositories. Please contact me for further details of services I can provide.</span
+              >Below are a few examples of my work. All the source code is
+              available as Github Repositories. Please contact me for further
+              details of services I can provide.</span
             >
           </div>
           <div class="row">
@@ -305,14 +307,10 @@ https://templatemo.com/tm-531-reflux
                 >
               </form>
 
-
               <div class="isotope-box">
                 <div class="isotope-item" data-type="htmlcss">
                   <figure class="snip1321">
-                    <img
-                    src="assets/images/website1.png"
-                    alt="sq-sample26"
-                  />
+                    <img src="assets/images/website1.png" alt="sq-sample26" />
                     <figcaption>
                       <a
                         href="assets/images/website1.png"
@@ -322,26 +320,56 @@ https://templatemo.com/tm-531-reflux
                       ></a>
                       <h4>Product landing page</h4>
                       <span>Built using HTML and CSS</span>
-                      <a href="https://edy-gavrila.github.io/Product-Landing-Page/" target="_blank">Visit live page</a>
+                      <a
+                        href="https://edy-gavrila.github.io/Product-Landing-Page/"
+                        target="_blank"
+                        >Visit live page</a
+                      >
                     </figcaption>
                   </figure>
                 </div>
 
                 <div class="isotope-item" data-type="htmlcss">
                   <figure class="snip1321">
-                    <img
-                      src="assets/images/portfolio-02.jpg"
-                      alt="sq-sample26"
-                    />
+                    <img src="assets/images/website2.png" alt="sq-sample26" />
                     <figcaption>
                       <a
-                        href="assets/images/portfolio-02.jpg"
+                        href="assets/images/website2.png"
                         data-lightbox="image-1"
-                        data-title="Caption"
+                        data-title="An example of a tribute/ bio page for a personality. It demonstrates how a simple, static website can convey a powerful message."
                         ><i class="fa fa-search"></i
                       ></a>
-                      <h4>Second Title</h4>
-                      <span>please tell your friends</span>
+                      <h4>Tribute Page</h4>
+                      <span>Also built using HTML and CSS</span>
+                      <a
+                        href="https://edy-gavrila.github.io/Tribute-page-Dr-Norman-Borlaug/"
+                        target="_blank"
+                        >Visit live page</a
+                      >
+                    </figcaption>
+                  </figure>
+                </div>
+
+                <div class="isotope-item" data-type="htmlcss">
+                  <figure class="snip1321">
+                    <img src="assets/images/website3.png" alt="sq-sample26" />
+                    <figcaption>
+                      <a
+                        href="assets/images/website3.png"
+                        data-lightbox="image-1"
+                        data-title="This is an example of a simple, yet elegant survey form that can be adapted quickly to satisfy different needs."
+                        ><i class="fa fa-search"></i
+                      ></a>
+                      <h4>Customer Survey Form</h4>
+                      <span
+                        >Built in HTML, CSS with just a sprinkle of
+                        Javascript</span
+                      >
+                      <a
+                        href="https://edy-gavrila.github.io/Customer-Survey-Form/"
+                        target="_blank"
+                        >Visit live page</a
+                      >
                     </figcaption>
                   </figure>
                 </div>
@@ -384,25 +412,6 @@ https://templatemo.com/tm-531-reflux
                   </figure>
                 </div>
 
-                <div class="isotope-item" data-type="htmlcss">
-                  <figure class="snip1321">
-                    <img
-                      src="assets/images/portfolio-05.jpg"
-                      alt="sq-sample26"
-                    />
-                    <figcaption>
-                      <a
-                        href="assets/images/portfolio-05.jpg"
-                        data-lightbox="image-1"
-                        data-title="Caption"
-                        ><i class="fa fa-search"></i
-                      ></a>
-                      <h4>Fifth Awesome</h4>
-                      <span>Ut sollicitudin risus</span>
-                    </figcaption>
-                  </figure>
-                </div>
-
                 <div class="isotope-item" data-type="javascript">
                   <figure class="snip1321">
                     <img
@@ -427,8 +436,6 @@ https://templatemo.com/tm-531-reflux
         </div>
       </section>
 
-
-
       <section class="section contact-me" data-section="section4">
         <div class="container">
           <div class="section-heading">
@@ -443,7 +450,7 @@ https://templatemo.com/tm-531-reflux
           <div class="row">
             <div class="right-content">
               <div class="container">
-                <form id="contact" action="" method="post">
+                <form id="contact" action="">
                   <div class="row">
                     <div class="col-md-6">
                       <fieldset>
@@ -518,56 +525,6 @@ https://templatemo.com/tm-531-reflux
     <script src="assets/js/owl-carousel.js"></script>
     <script src="assets/js/lightbox.js"></script>
     <script src="assets/js/custom.js"></script>
-    <script>
-      //according to loftblog tut
-      $(".main-menu li:first").addClass("active");
-
-      var showSection = function showSection(section, isAnimate) {
-        var direction = section.replace(/#/, ""),
-          reqSection = $(".section").filter(
-            '[data-section="' + direction + '"]'
-          ),
-          reqSectionPos = reqSection.offset().top - 0;
-
-        if (isAnimate) {
-          $("body, html").animate(
-            {
-              scrollTop: reqSectionPos,
-            },
-            800
-          );
-        } else {
-          $("body, html").scrollTop(reqSectionPos);
-        }
-      };
-
-      var checkSection = function checkSection() {
-        $(".section").each(function () {
-          var $this = $(this),
-            topEdge = $this.offset().top - 80,
-            bottomEdge = topEdge + $this.height(),
-            wScroll = $(window).scrollTop();
-          if (topEdge < wScroll && bottomEdge > wScroll) {
-            var currentId = $this.data("section"),
-              reqLink = $("a").filter("[href*=\\#" + currentId + "]");
-            reqLink
-              .closest("li")
-              .addClass("active")
-              .siblings()
-              .removeClass("active");
-          }
-        });
-      };
-
-      $(".main-menu").on("click", "a", function (e) {
-        e.preventDefault();
-        showSection($(this).attr("href"), true);
-      });
-
-      $(window).scroll(function () {
-        checkSection();
-      });
-    </script>
-    <script src = "script.js"></script>
+    <script src="assets/js/my-script.js"></script>
   </body>
 </html>
