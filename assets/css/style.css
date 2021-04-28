@@ -361,6 +361,14 @@ button:hover {
     color: #fff;
 }
 
+button:focus{
+    outline: 0;
+}
+
+button.success{
+    background-color: green;
+    color: white;
+}
 
 /* Left & Right Post */
 
@@ -658,6 +666,11 @@ section.contact-me {
     line-height: 40px;
     width: 100%;
     padding-left: 15px;
+}
+
+.invalid{
+    border-color: red !important;
+    background-color: salmon !important;
 }
 
 #contact input:focus {
