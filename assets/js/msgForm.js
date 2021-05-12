@@ -3,11 +3,13 @@ const emailField = document.getElementById("email");
 const subjectField = document.getElementById("subject");
 const msgField = document.getElementById("message");
 const submitBtn = document.getElementById("form-submit");
+const warningMsg = document.querySelector(".warning");
 
 const DATABASE_URL =
   "https://portofolio-contact-data-default-rtdb.firebaseio.com/messages.json";
 
 const msgData = {
+  id: "",
   name: "",
   email: "",
   subject: "",
@@ -20,7 +22,7 @@ function validFormEntry() {
     nameField.classList.add("invalid");
     validEntries = false;
   }
-  if (emailField.value.trim().length === 0) {
+  if (emailField.value.trim().length === 0 || !emailField.value.includes("@")) {
     emailField.classList.add("invalid");
     validEntries = false;
   }
@@ -53,16 +55,26 @@ msgField.addEventListener("input", () => {
   msgField.classList.remove("invalid");
 });
 
-function submitMessage(event) {
+async function submitMessage(event) {
   event.preventDefault();
 
   if (validFormEntry()) {
+    warningMsg.style.visibility = "hidden";
+
+    msgData.id = (Math.random()).toString().slice(2,-1);
     msgData.name = nameField.value.trim();
     msgData.email = emailField.value.trim();
     msgData.subject = subjectField.value.trim();
     msgData.message = msgField.value.trim();
-    let res = postData(DATABASE_URL, msgData);
-    //console.log(res);
+
+    let res = await postData(DATABASE_URL, msgData);
+    if (res !== undefined && res.ok) {
+      showSubmitSuccess();
+    } else {
+      showSubmitFailure();
+    }
+  } else {
+    warningMsg.style.visibility = "visible";
   }
 }
 
@@ -72,16 +84,25 @@ function showSubmitSuccess() {
   submitBtn.setAttribute("disabled", "true");
 }
 
-async function postData(url = "", data = {}) {
-  const response = await fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  });
-  if (response.ok) {
-    showSubmitSuccess();
-  }
-  return response.json();
+function showSubmitFailure() {
+  submitBtn.innerHTML = "Oops! Something went wrong";
+  submitBtn.style.backgroundColor = "salmon";
+  submitBtn.style.color = "white";
 }
+
+async function postData(url = "", data = {}) {
+  let response;
+  try {
+    response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+  } catch (err) {
+    console.log(err.message);
+  }
+  return response;
+}
+

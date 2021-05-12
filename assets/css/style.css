@@ -1,12 +1,4 @@
-/*
-
-Reflux Template
-
-https://templatemo.com/tm-531-reflux
-
-*/
-
-@import url(fontawesome.css);
+@import url(./fontawesome.css);
 @import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900");
 body {
     font-family: 'Lato', sans-serif;
@@ -655,6 +647,11 @@ section.contact-me {
     border-bottom: none;
 }
 
+.warning{
+    color: salmon;
+    visibility: hidden;
+}
+
 #contact input {
     background-color: rgba(250,250,250,0.1);
     border: 1px solid rgba(250,250,250,1);
@@ -671,6 +668,10 @@ section.contact-me {
 .invalid{
     border-color: red !important;
     background-color: salmon !important;
+}
+
+.invalid::placeholder{
+    color: white;
 }
 
 #contact input:focus {
