@@ -27,5 +27,5 @@ window.addEventListener("resize", (e) => {
   }
 })
 
-console.log(owlCarousel);
-
+//make first link in the menu active
+document.querySelector(".main-menu li:first-of-type").classList.add("active")

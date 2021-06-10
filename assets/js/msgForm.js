@@ -5,8 +5,18 @@ const msgField = document.getElementById("message");
 const submitBtn = document.getElementById("form-submit");
 const warningMsg = document.querySelector(".warning");
 
-const DATABASE_URL =
-  "https://portofolio-contact-data-default-rtdb.firebaseio.com/messages.json";
+const firebaseConfig = {
+  apiKey: "AIzaSyBTnhgafzqBBAHEL-WV6clggTKCtIg8Adw",
+  authDomain: "portofolio-contact-data.firebaseapp.com",
+  databaseURL: "https://portofolio-contact-data-default-rtdb.firebaseio.com",
+  projectId: "portofolio-contact-data",
+  storageBucket: "portofolio-contact-data.appspot.com",
+  messagingSenderId: "518798925686",
+  appId: "1:518798925686:web:75a9692e1490b54d1c6457",
+  measurementId: "G-2BRJKXM698",
+};
+
+firebase.initializeApp(firebaseConfig);
 
 const msgData = {
   id: "",
@@ -61,14 +71,14 @@ async function submitMessage(event) {
   if (validFormEntry()) {
     warningMsg.style.visibility = "hidden";
 
-    msgData.id = (Math.random()).toString().slice(2,-1);
+    msgData.id = Math.random().toString().slice(2, -1);
     msgData.name = nameField.value.trim();
     msgData.email = emailField.value.trim();
     msgData.subject = subjectField.value.trim();
     msgData.message = msgField.value.trim();
 
-    let res = await postData(DATABASE_URL, msgData);
-    if (res !== undefined && res.ok) {
+    let res = await postData(msgData);
+    if (res.id !==undefined && res.id !==-1) {
       showSubmitSuccess();
     } else {
       showSubmitFailure();
@@ -90,19 +100,18 @@ function showSubmitFailure() {
   submitBtn.style.color = "white";
 }
 
-async function postData(url = "", data = {}) {
-  let response;
-  try {
-    response = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
-  } catch (err) {
-    console.log(err.message);
+async function postData( data = {}) {
+  //firestore method first:
+  let db = firebase.firestore();
+  let res;
+  try{
+ res = await db.collection("messages").add(data);
+ console.log(res);
+  } catch(err){
+    res = {
+      id: -1,
+      error: err, 
+    }
   }
-  return response;
+return res;
 }
-

@@ -1,32 +1,5 @@
 (function ($) {
-  // Close menu after click on smaller screens
-  /*   $(window).on("resize", function () {
-    if ($(window).width() < 846) {
-      $(".main-menu a").on("click", function () {
-        menu.classList.remove("open");
-      });
-    }
-  });
- */
-/*   $(".owl-carousel").owlCarousel({
-    items: 4,
-    lazyLoad: true,
-    loop: true,
-    dots: true,
-    margin: 30,
-    responsiveClass: true,
-    responsive: {
-      0: {
-        items: 1,
-      },
-      600: {
-        items: 1,
-      },
-      1000: {
-        items: 1,
-      },
-    },
-  }); */
+
 
   $(".hover").mouseleave(function () {
     $(this).removeClass("hover");
@@ -59,7 +32,6 @@
   });
 })(jQuery);
 
-$(".main-menu li:first").addClass("active");
 
 var showSection = function showSection(section, isAnimate) {
   var direction = section.replace(/#/, ""),
