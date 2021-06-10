@@ -1,6 +1,4 @@
 (function ($) {
-
-
   $(".hover").mouseleave(function () {
     $(this).removeClass("hover");
   });
@@ -32,7 +30,6 @@
   });
 })(jQuery);
 
-
 var showSection = function showSection(section, isAnimate) {
   var direction = section.replace(/#/, ""),
     reqSection = $(".section").filter('[data-section="' + direction + '"]'),
@@ -60,6 +57,7 @@ var checkSection = function checkSection() {
       var currentId = $this.data("section"),
         reqLink = $("a").filter("[href*=\\#" + currentId + "]");
       reqLink.closest("li").addClass("active").siblings().removeClass("active");
+      $(".menu").removeClass("open");
     }
   });
 };
